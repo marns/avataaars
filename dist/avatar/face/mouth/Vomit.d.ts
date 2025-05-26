@@ -5,5 +5,6 @@ export default class Vomit extends React.Component {
     private path2;
     private mask1;
     private filter1;
-    render(): JSX.Element;
+    render(): import("react/jsx-runtime").JSX.Element;
 }
+//# sourceMappingURL=Vomit.d.ts.map

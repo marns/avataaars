@@ -2,8 +2,9 @@ import * as React from 'react'
 import { uniqueId } from 'lodash'
 
 import FacialHair from './facialHair'
+import { WithChildren } from '../../types/common'
 
-export default class LongHairShavedSides extends React.Component {
+export default class LongHairShavedSides extends React.Component<WithChildren> {
   static optionValue = 'LongHairShavedSides'
   private mask1 = uniqueId('react-mask-')
   private mask2 = uniqueId('react-mask-')
@@ -13,7 +14,7 @@ export default class LongHairShavedSides extends React.Component {
   private path3 = uniqueId('react-path-')
   private path4 = uniqueId('react-path-')
 
-  render () {
+  render() {
     const { mask1, mask2, mask3, path1, path2, path3, path4 } = this
     return (
       <g id='Top' strokeWidth='1' fillRule='evenodd'>

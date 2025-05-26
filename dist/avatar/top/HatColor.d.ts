@@ -4,5 +4,6 @@ export interface Props {
     defaultColor?: string;
 }
 export default class Colors extends React.Component<Props> {
-    render(): JSX.Element;
+    render(): import("react/jsx-runtime").JSX.Element;
 }
+//# sourceMappingURL=HatColor.d.ts.map

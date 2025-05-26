@@ -1,5 +1,6 @@
+import { WithChildren } from '../../types/common';
 import * as React from 'react';
-export default class LongHairShavedSides extends React.Component {
+export default class LongHairShavedSides extends React.Component<WithChildren> {
     static optionValue: string;
     private mask1;
     private mask2;
@@ -8,5 +9,6 @@ export default class LongHairShavedSides extends React.Component {
     private path2;
     private path3;
     private path4;
-    render(): JSX.Element;
+    render(): import("react/jsx-runtime").JSX.Element;
 }
+//# sourceMappingURL=LongHairShavedSides.d.ts.map

@@ -8,3 +8,4 @@ export default class Option {
         label: string;
     });
 }
+//# sourceMappingURL=Option.d.ts.map

@@ -1,5 +1,6 @@
+import { WithChildren } from '../../types/common';
 import * as React from 'react';
-export default class WinterHat4 extends React.Component {
+export default class WinterHat4 extends React.Component<WithChildren> {
     static optionValue: string;
     private filter1;
     private mask1;
@@ -11,5 +12,6 @@ export default class WinterHat4 extends React.Component {
     private path3;
     private path4;
     private path5;
-    render(): JSX.Element;
+    render(): import("react/jsx-runtime").JSX.Element;
 }
+//# sourceMappingURL=WinterHat4.d.ts.map

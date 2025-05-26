@@ -1,5 +1,6 @@
 import * as React from 'react';
 export default class Close extends React.Component {
     static optionValue: string;
-    render(): JSX.Element;
+    render(): import("react/jsx-runtime").JSX.Element;
 }
+//# sourceMappingURL=Close.d.ts.map

@@ -5,5 +5,6 @@ export default class Squint extends React.Component {
     private path2;
     private mask1;
     private mask2;
-    render(): JSX.Element;
+    render(): import("react/jsx-runtime").JSX.Element;
 }
+//# sourceMappingURL=Squint.d.ts.map

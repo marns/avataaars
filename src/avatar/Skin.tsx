@@ -1,13 +1,15 @@
 import * as React from 'react'
 
 import { Selector, SkinOption } from '../options'
+import { MaskIDProps, AvatarOptionComponent } from '../types/common'
 
-export interface Props {
-  maskID: string
-}
+export interface Props extends MaskIDProps { }
 
-function makeColor(name: string, color: string) {
+function makeColor(name: string, color: string): AvatarOptionComponent<Props> {
   class ColorComponent extends React.Component<Props> {
+    static optionValue = name
+    static displayName = name
+
     render() {
       return (
         <g
@@ -21,10 +23,8 @@ function makeColor(name: string, color: string) {
       )
     }
   }
-  const anyComponent = ColorComponent as any
-  anyComponent.displayName = name
-  anyComponent.optionValue = name
-  return anyComponent
+
+  return ColorComponent as AvatarOptionComponent<Props>
 }
 
 const Tanned = makeColor('Tanned', '#FD9841')
@@ -38,7 +38,7 @@ const Black = makeColor('Black', '#614335')
 export default class Skin extends React.Component<Props> {
   render() {
     return (
-      <Selector option={SkinOption} defaultOption={Light}>
+      <Selector<Props> option={SkinOption} defaultOption={Light}>
         <Tanned maskID={this.props.maskID} />
         <Yellow maskID={this.props.maskID} />
         <Pale maskID={this.props.maskID} />

@@ -1,0 +1,1 @@
+{"version":3,"file":"Wayfarers.d.ts","sourceRoot":"","sources":["../../../../src/avatar/top/accessories/Wayfarers.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,KAAK,MAAM,OAAO,CAAA;AAG9B,MAAM,CAAC,OAAO,OAAO,SAAU,SAAQ,KAAK,CAAC,SAAS;IACpD,MAAM,CAAC,WAAW,SAAc;IAEhC,OAAO,CAAC,KAAK,CAA0B;IACvC,OAAO,CAAC,KAAK,CAA0B;IACvC,OAAO,CAAC,OAAO,CAA4B;IAC3C,OAAO,CAAC,eAAe,CAAqC;IAE5D,MAAM;CA8GP"}

@@ -5,5 +5,6 @@ export default class Wayfarers extends React.Component {
     private path2;
     private filter1;
     private linearGradient1;
-    render(): JSX.Element;
+    render(): import("react/jsx-runtime").JSX.Element;
 }
+//# sourceMappingURL=Wayfarers.d.ts.map

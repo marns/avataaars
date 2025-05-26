@@ -1,11 +1,11 @@
-import Option from './Option';
+import { default as Option } from './Option';
 export interface OptionState {
     key: string;
     options: Array<string>;
     defaultValue?: string;
     available: number;
 }
-export declare type OptionContextState = {
+export type OptionContextState = {
     [index: string]: OptionState;
 };
 export default class OptionContext {
@@ -34,3 +34,4 @@ export default class OptionContext {
     private setState;
     private notifyListener;
 }
+//# sourceMappingURL=OptionContext.d.ts.map

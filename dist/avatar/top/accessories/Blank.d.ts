@@ -3,3 +3,4 @@ export default class Blank extends React.Component {
     static optionValue: string;
     render(): null;
 }
+//# sourceMappingURL=Blank.d.ts.map

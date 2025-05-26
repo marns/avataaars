@@ -1,25 +1,44 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "jsx": "react",
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "allowImportingTsExtensions": false,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": false,
+    "strict": true,
     "strictNullChecks": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
     "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
     "newLine": "lf",
     "outDir": "./dist",
     "lib": [
-      "es6",
-      "dom"
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
     ]
   },
   "types": [
-    "jest",
     "node"
+  ],
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "dist/**/*",
+    "node_modules/**/*",
+    "demo/**/*"
   ]
 }

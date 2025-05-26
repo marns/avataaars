@@ -10,4 +10,23 @@
 config.gypi
 CVS
 npm-debug.log
+
+# Examples and demo files
+examples/
 avataaars-example.png
+
+# Development files
+src/
+tsconfig.json
+vite.config.ts
+eslint.config.js
+.prettierrc
+.vscode/
+
+# Test files
+*.test.*
+test/
+
+# Build tools and configs
+.github/
+.gitignore

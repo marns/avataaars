@@ -1,4 +1,5 @@
 import * as React from 'react';
 export default class Eyebrow extends React.Component {
-    render(): JSX.Element;
+    render(): import("react/jsx-runtime").JSX.Element;
 }
+//# sourceMappingURL=index.d.ts.map

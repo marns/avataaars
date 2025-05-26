@@ -6,5 +6,6 @@ export default class Sunglasses extends React.Component {
     private filter1;
     private linearGradient1;
     private linearGradient2;
-    render(): JSX.Element;
+    render(): import("react/jsx-runtime").JSX.Element;
 }
+//# sourceMappingURL=Sunglasses.d.ts.map

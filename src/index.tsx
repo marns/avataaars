@@ -1,13 +1,14 @@
-import * as PropTypes from 'prop-types'
 import * as React from 'react'
+import { createContext, useContext, useMemo, useEffect } from 'react'
 
 import Avatar, { AvatarStyle } from './avatar'
 import { OptionContext, allOptions } from './options'
+import { OptionContextProvider } from './options/Selector'
 
 export { default as Avatar, AvatarStyle } from './avatar'
 export { Option, OptionContext, allOptions } from './options'
 
-import {default as PieceComponent} from './avatar/piece';
+import { default as PieceComponent } from './avatar/piece';
 
 export interface Props {
   avatarStyle: string
@@ -25,79 +26,84 @@ export interface Props {
   eyebrowType?: string
   mouthType?: string
   skinColor?: string
-  pieceType?:string
-  pieceSize?:string
-  viewBox?:string
+  pieceType?: string
+  pieceSize?: string
+  viewBox?: string
+  [key: string]: any; // Allow indexing with string keys
 }
 
-export default class AvatarComponent extends React.Component<Props> {
-  static childContextTypes = {
-    optionContext: PropTypes.instanceOf(OptionContext)
-  }
-  private optionContext: OptionContext = new OptionContext(allOptions)
+// Create modern React Context
+const AvatarOptionContext = createContext<OptionContext | null>(null);
 
-  getChildContext () {
-    return { optionContext: this.optionContext }
+// Custom hook to use the context
+export const useAvatarOptions = () => {
+  const context = useContext(AvatarOptionContext);
+  if (!context) {
+    throw new Error('useAvatarOptions must be used within an AvatarProvider');
   }
+  return context;
+};
 
-  UNSAFE_componentWillMount () {
-    this.updateOptionContext(this.props)
-  }
+// Modern functional component using hooks
+export default function AvatarComponent(props: Props) {
+  const { avatarStyle, style, className } = props;
 
-  UNSAFE_componentWillReceiveProps (nextProps: Props) {
-    this.updateOptionContext(nextProps)
-  }
+  // Create option context instance
+  const optionContext = useMemo(() => new OptionContext(allOptions), []);
 
-  render () {
-    const { avatarStyle, style, className } = this.props
-    return <Avatar avatarStyle={avatarStyle as AvatarStyle} style={style} className={className} />
-  }
-
-  private updateOptionContext (props: Props) {
-    const data: { [index: string]: string } = {}
+  // Update option context when props change
+  useEffect(() => {
+    const data: { [index: string]: string } = {};
     for (const option of allOptions) {
-      const value = props[option.key]
+      const value = props[option.key];
       if (!value) {
-        continue
+        continue;
       }
-      data[option.key] = value
+      data[option.key] = value;
     }
-    this.optionContext.setData(data)
-  }
+    optionContext.setData(data);
+  }, [props, optionContext]);
+
+  const avatarProps: any = { avatarStyle: avatarStyle as AvatarStyle };
+  if (style !== undefined) avatarProps.style = style;
+  if (className !== undefined) avatarProps.className = className;
+
+  return (
+    <OptionContextProvider value={optionContext}>
+      <Avatar {...avatarProps} />
+    </OptionContextProvider>
+  );
 }
 
-export class Piece extends React.Component<Props> {
-  static childContextTypes = {
-    optionContext: PropTypes.instanceOf(OptionContext)
-  }
-  private optionContext: OptionContext = new OptionContext(allOptions)
+// Modern Piece component using hooks
+export function Piece(props: Props) {
+  const { avatarStyle, style, pieceType, pieceSize, viewBox } = props;
 
-  getChildContext () {
-    return { optionContext: this.optionContext }
-  }
+  // Create option context instance
+  const optionContext = useMemo(() => new OptionContext(allOptions), []);
 
-  UNSAFE_componentWillMount () {
-    this.updateOptionContext(this.props)
-  }
-
-  UNSAFE_componentWillReceiveProps (nextProps: Props) {
-    this.updateOptionContext(nextProps)
-  }
-
-  render () {
-    const { avatarStyle, style, pieceType, pieceSize, viewBox } = this.props
-    return <PieceComponent avatarStyle={avatarStyle as AvatarStyle} style={style} pieceType={pieceType} pieceSize={pieceSize} viewBox={viewBox}/>
-  }
-
-  private updateOptionContext (props: Props) {
-    const data: { [index: string]: string } = {}
+  // Update option context when props change
+  useEffect(() => {
+    const data: { [index: string]: string } = {};
     for (const option of allOptions) {
-      const value = props[option.key]
+      const value = props[option.key];
       if (!value) {
-        continue
+        continue;
       }
-      data[option.key] = value
+      data[option.key] = value;
     }
-    this.optionContext.setData(data)
-  }
+    optionContext.setData(data);
+  }, [props, optionContext]);
+
+  const pieceProps: any = { avatarStyle: avatarStyle as AvatarStyle };
+  if (style !== undefined) pieceProps.style = style;
+  if (pieceType !== undefined) pieceProps.pieceType = pieceType;
+  if (pieceSize !== undefined) pieceProps.pieceSize = pieceSize;
+  if (viewBox !== undefined) pieceProps.viewBox = viewBox;
+
+  return (
+    <OptionContextProvider value={optionContext}>
+      <PieceComponent {...pieceProps} />
+    </OptionContextProvider>
+  );
 }

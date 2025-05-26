@@ -15,5 +15,6 @@ export default class Avatar extends React.Component<Props> {
     private mask1;
     private mask2;
     private mask3;
-    render(): JSX.Element;
+    render(): import("react/jsx-runtime").JSX.Element;
 }
+//# sourceMappingURL=index.d.ts.map

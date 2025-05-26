@@ -2,8 +2,9 @@ import * as React from 'react'
 import { uniqueId } from 'lodash'
 
 import FacialHair from './facialHair'
+import { WithChildren } from '../../types/common'
 
-export default class Hat extends React.Component {
+export default class Hat extends React.Component<WithChildren> {
   static optionValue = 'Hat'
 
   private filter1 = uniqueId('react-filter-')
@@ -12,7 +13,7 @@ export default class Hat extends React.Component {
   private path1 = uniqueId('react-path-')
   private path2 = uniqueId('react-path-')
 
-  render () {
+  render() {
     const { filter1, mask1, mask2, path1, path2 } = this
     return (
       <g id='Top' strokeWidth='1' fillRule='evenodd'>

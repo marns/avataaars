@@ -3,5 +3,6 @@ export interface Props {
     maskID: string;
 }
 export default class HairColor extends React.Component<Props> {
-    render(): JSX.Element;
+    render(): import("react/jsx-runtime").JSX.Element;
 }
+//# sourceMappingURL=HairColor.d.ts.map

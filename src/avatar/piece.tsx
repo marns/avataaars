@@ -27,12 +27,14 @@ export interface Props {
 
 export default class PieceComponent extends React.Component<Props> {
   render() {
+    const { pieceSize = '100', style, viewBox = "0 0 264 280" } = this.props;
+
     return (
       <svg
-        style={this.props.style}
-        width={`${this.props.pieceSize}px`}
-        height={`${this.props.pieceSize}px`}
-        viewBox={this.props.viewBox || "0 0 264 280"}
+        style={style}
+        width={`${pieceSize}px`}
+        height={`${pieceSize}px`}
+        viewBox={viewBox}
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink">

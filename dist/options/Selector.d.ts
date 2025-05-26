@@ -1,22 +1,16 @@
-import * as PropTypes from 'prop-types';
+import { default as Option } from './Option';
+import { default as OptionContext } from './OptionContext';
+import { AvatarOptionComponent } from '../types/common';
 import * as React from 'react';
-import Option from './Option';
-import OptionContext from './OptionContext';
-export interface Props {
+export interface Props<P = any> {
     option: Option;
-    defaultOption: React.ComponentClass | string;
+    defaultOption: AvatarOptionComponent<P> | string;
+    children?: React.ReactNode;
 }
-export default class Selector extends React.Component<Props> {
-    static contextTypes: {
-        optionContext: PropTypes.Requireable<OptionContext>;
-    };
-    private get optionContext();
-    UNSAFE_componentWillMount(): void;
-    UNSAFE_componentWillUpdate(nextProps: Props & {
-        children?: React.ReactNode;
-    }): void;
-    componentWillUnmount(): void;
-    render(): null;
-    private optionContextUpdate;
-    private updateOptionValues;
-}
+export declare const useOptionContext: () => OptionContext;
+export declare const OptionContextProvider: React.FC<{
+    value: OptionContext;
+    children: React.ReactNode;
+}>;
+export default function Selector<P = any>({ option, defaultOption, children }: Props<P>): import("react/jsx-runtime").JSX.Element;
+//# sourceMappingURL=Selector.d.ts.map

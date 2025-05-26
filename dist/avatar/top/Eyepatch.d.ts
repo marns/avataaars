@@ -3,5 +3,6 @@ export default class Eyepatch extends React.Component {
     static optionValue: string;
     private mask1;
     private path1;
-    render(): JSX.Element;
+    render(): import("react/jsx-runtime").JSX.Element;
 }
+//# sourceMappingURL=Eyepatch.d.ts.map

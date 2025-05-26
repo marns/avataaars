@@ -11,5 +11,6 @@ export interface Props {
     viewBox?: string;
 }
 export default class PieceComponent extends React.Component<Props> {
-    render(): JSX.Element;
+    render(): import("react/jsx-runtime").JSX.Element;
 }
+//# sourceMappingURL=piece.d.ts.map

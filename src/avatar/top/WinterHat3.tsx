@@ -3,8 +3,9 @@ import { uniqueId } from 'lodash'
 
 import FacialHair from './facialHair'
 import HatColor from './HatColor'
+import { WithChildren } from '../../types/common'
 
-export default class WinterHat3 extends React.Component {
+export default class WinterHat3 extends React.Component<WithChildren> {
   static optionValue = 'WinterHat3'
   private filter1 = uniqueId('react-filter-')
   private mask1 = uniqueId('react-mask-')
