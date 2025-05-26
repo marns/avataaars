@@ -12499,4 +12499,4 @@ exports.Piece = Piece;
 exports.allOptions = allOptions;
 exports.default = AvatarComponent;
 exports.useAvatarOptions = useAvatarOptions;
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=index.cjs.map
