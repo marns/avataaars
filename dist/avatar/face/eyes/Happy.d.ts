@@ -1,6 +1,0 @@
-import * as React from 'react';
-export default class Happy extends React.Component {
-    static optionValue: string;
-    render(): import("react/jsx-runtime").JSX.Element;
-}
-//# sourceMappingURL=Happy.d.ts.map

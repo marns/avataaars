@@ -58,5 +58,6 @@ typings/
 .env
 
 # Build outputs
+dist/
 examples/dist/
 
