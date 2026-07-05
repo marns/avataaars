@@ -7,6 +7,11 @@ import { OptionContextProvider } from './options/Selector'
 
 export { default as Avatar, AvatarStyle } from './avatar'
 export { Option, OptionContext, allOptions } from './options'
+// The provider that supplies the OptionContext to the piece components. Exported so
+// consumers can populate the context SYNCHRONOUSLY (before render) instead of via the
+// default export's useEffect — required for server-string rendering (react-dom/server
+// skips effects), e.g. rendering avatars to SVG for React Native.
+export { OptionContextProvider } from './options/Selector'
 
 import { default as PieceComponent } from './avatar/piece';
 
